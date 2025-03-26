@@ -1,0 +1,45 @@
+{   
+    "DATAPATH": "Documents/datasets/classif_datasets/", 
+    "SAVEPATH_clf": "models/",
+    "SAVEPATH_early_clf": "models/",
+    "RESULTSPATH": "results/", 
+    "sampling_ratio": 0.05,
+    "min_length": 1,
+    "alphas": [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1], 
+    "classifiers": {
+        "RidgeClassifierCV_minirocket" : {"alphas":[1.0e-03, 4.6e-03, 2.1e-02, 1e-01, 4.6e-01, 2.1e+00, 1e+01, 4.6e+01, 2e+02, 1e+03]}, 
+        "XGBClassifier": {"random_state":42, "n_jobs":1}, 
+        "RidgeClassifierCV_weasel" : {"alphas":[[1.0e-01, 4.64e-01, 2.15e+00, 1.0e+01, 4.64e+01, 2.15e+02, 1.0e+03, 4.64e+03, 2.15e+04, 1.0e+05]]}
+    },
+    "extractors": {
+        "RidgeClassifierCV_weasel": {"method": "weasel2.0", "params": {"random_state": 42}},
+        "RidgeClassifierCV_minirocket": {"method": "minirocket", "path": "models/", "params": {"random_state":42, "n_jobs": 3}},
+        "XGBClassifier": {"method": "tsfresh", "params": {"n_jobs": 3}},
+        "RidgeClassifierCVP_minirocket": {"method": "minirocket", "params": {"random_state":42, "n_jobs": 3}}
+    }, 
+    "val_ratio_trigger": 0.4,
+
+    "datasets_blue": ["DodgerLoopDay", "GestureMidAirD1", "GunPointAgeSpan", "PLAID",
+    "CBF", "Crop", "ChlorineConcentration", "CinCECGTorso", "ECG5000", "ECGFiveDays", "FaceAll", "FacesUCR", "FordA", 
+    "FreezerRegularTrain", "FiftyWords", "HandOutlines", "InsectWingbeatSound", "ItalyPowerDemand", "Mallat", "MedicalImages", "MelbournePedestrian", 
+    "MixedShapesRegularTrain", "MoteStrain", "NonInvasiveFetalECGThorax2", "PhalangesOutlinesCorrect", "ProximalPhalanxOutlineCorrect", 
+    "SemgHandGenderCh2", "SonyAIBORobotSurface2", "StarLightCurves", "Strawberry", "Symbols", "TwoLeadECG", "TwoPatterns", "UWaveGestureLibraryX", "WordSynonyms", 
+    "Wafer", "Yoga", "Adiac", "Beef", "BeetleFly", "Coffee", "CricketX", "CricketY", "CricketZ", "DiatomSizeReduction", "ECG200", "FaceFour", "Fish", "GunPoint", "Haptics", "InlineSkate",         
+    "Lightning2", "Lightning7", "NonInvasiveFetalECGThorax1", "OliveOil", "OSULeaf", "SonyAIBORobotSurface1", "SwedishLeaf", "Trace", 
+    "UWaveGestureLibraryY", "UWaveGestureLibraryZ", "ACSF1", "BME", "Car", "Chinatown", "Computers", "DistalPhalanxOutlineCorrect",
+    "Earthquakes", "EOGVerticalSignal", "EthanolLevel", "Ham", "Herring", "HouseTwenty", "InsectEPGRegularTrain", "LargeKitchenAppliances",
+    "Meat", "Plane", "PowerCons", "RefrigerationDevices", "Rock", "ScreenType", "ShapesAll", "SmoothSubspace",
+    "SyntheticControl", "ToeSegmentation1", "UMD", "Wine", "Worms", "ElectricDevices"],
+
+    "datasets" : ["AcousticContaminationMadrid_nmv", "AluminiumConcentration", "BitcoinSentiment", "BME", "ChilledWaterPredictor",
+    "Chinatown", "Crop", "DhakaHourlyAirQuality", "DodgerLoopDay", "ElectricityPredictor", "EOGVerticalSignal", "FloodModeling3", "GestureMidAirD1", "GunPointAgeSpan", 
+    "HouseholdPowerConsumption1", "HouseTwenty", "HotwaterPredictor", "InsectEPGRegularTrain", "MadridPM10Quality_nmv", 
+    "MelbournePedestrian", "ParkingBirmingham_eq", "PLAID", "PrecipitationAndalusia_nmv", "Rock", "SemgHandGenderCh2", 
+    "SmoothSubspace", "SolarRadiationAndalusia_nmv", "SteamPredictor", "TetuanEnergyConsumption", "UMD", "WindTurbinePower"], 
+
+    "calib": 1,
+    "split": "default",
+    "n_jobs": 1,
+    "z_normalized":0,
+    "random_state": 42
+}
